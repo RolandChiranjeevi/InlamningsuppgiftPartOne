@@ -16,6 +16,8 @@ public class MorsecodeTest {
     @Test
     public void showError_Test() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.textToMorse("HEJ!"));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.textToMorse((String)null));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.textToMorse(""));
     }
 
     @Test
@@ -30,15 +32,5 @@ public class MorsecodeTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText("... --- ..-.-"));
         Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText((String)null));
         Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText(""));
-    }
-
-    @Test
-    public void textToMorse_throwsOnNull() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.textToMorse((String)null));
-    }
-
-    @Test
-    public void textToMorse_throwsOnEmptyString() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.textToMorse(""));
     }
 }
