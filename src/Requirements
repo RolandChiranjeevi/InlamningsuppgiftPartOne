@@ -1,0 +1,41 @@
+* Skriv ett program som gör om morsekod till engelska och engelska till morsekod.
+
+* Skapa minst två felhanteringar i systemet som hanterar två saker som användaren kan göra som går utanför det vanliga användandet av systemet.
+
+* Använd den internationella morsekoden för bokstäverna A till Z.
+
+* Korta och långa signaler ska representeras med punkt (.) och bindestreck (-).
+
+* Flera bokstäver skall gå att hantera men separation av ord behöver inte hanteras. Vi kommer hantera mellanslag med "/".
+
+
+
+
+Morsekodgenerator finns även här - https://morse-code-translator.org/articles/morse-code-chart
+International Morse Code:
+❖ A = .-
+❖ B = -...
+❖ C = -.-.
+❖ D = -..
+❖ E = .
+❖ F = ..-.
+❖ G = --.
+❖ H = ....
+❖ I = ..
+❖ J = .---
+❖ K = -.-
+❖ L = .-..
+❖ M = --
+❖ N = -.
+❖ O = ---
+❖ P = .--.
+❖ Q = --.-
+❖ R = .-.
+❖ S = ...
+❖ T = -
+❖ U = ..-
+❖ V = ...-
+❖ W = .--
+❖ X = -..-
+❖ Y = -.--
+❖ Z = --..
