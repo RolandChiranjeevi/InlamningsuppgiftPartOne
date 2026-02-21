@@ -3,27 +3,23 @@ import org.junit.jupiter.api.Test;
 
 public class MorsecodeTest {
     @Test
-    public void charToMorse_test() {
+    public void englishToMorse_Test() {
         Assertions.assertEquals(".-", Morsecode.textToMorse("A"));
         Assertions.assertEquals("--..", Morsecode.textToMorse("Z"));
         Assertions.assertEquals("...", Morsecode.textToMorse("S"));
         Assertions.assertEquals(".", Morsecode.textToMorse("E"));
-    }
-
-    @Test
-    public void textToMorse_test() {
         Assertions.assertEquals("... --- ...", Morsecode.textToMorse("SOS"));
         Assertions.assertEquals(".... . .-.. .-.. ---", Morsecode.textToMorse("HELLO"));
-        Assertions.assertEquals(".... . .-.. .-.. --- / .-- --- .-.", Morsecode.textToMorse("HELLO WOR"));
+        Assertions.assertEquals(".... . .-.. .-.. --- / .-- --- .-. .-.. -..", Morsecode.textToMorse("HELLO WORLD"));
     }
 
     @Test
-    public void textToMorseThrows_test() {
+    public void showError_Test() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.textToMorse("HEJ!"));
     }
 
     @Test
-    public void morseToText_simpleCases() {
+    public void morseToText_Test() {
         Assertions.assertEquals("A", Morsecode.morseToText(".-"));
         Assertions.assertEquals("SOS", Morsecode.morseToText("... --- ..."));
         Assertions.assertEquals("HELLO", Morsecode.morseToText(".... . .-.. .-.. ---"));
@@ -32,6 +28,8 @@ public class MorsecodeTest {
     @Test
     public void morseToText_throwsOnInvalidToken() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText("... --- ..-.-"));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText((String)null));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText(""));
     }
 
     @Test
@@ -42,15 +40,5 @@ public class MorsecodeTest {
     @Test
     public void textToMorse_throwsOnEmptyString() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.textToMorse(""));
-    }
-
-    @Test
-    public void morseToText_throwsOnNull() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText((String)null));
-    }
-
-    @Test
-    public void morseToText_throwsOnEmptyString() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> Morsecode.morseToText(""));
     }
 }
